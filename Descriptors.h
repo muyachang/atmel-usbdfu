@@ -14,7 +14,7 @@
 #define ATTR_CAN_DOWNLOAD           _BV(0) // the DFU device can accept DFU_DNLOAD requests to send data from the host to the device. */    
 
 #define VENDOR_ID_CODE  0x03EB // Atmel
-#define PRODUCT_ID_CODE 0x2FEF // ATmega16U2
+#define PRODUCT_ID_CODE 0x2FF0 // ATmega32U2
 
 typedef struct
 {
