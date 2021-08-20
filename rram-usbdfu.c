@@ -50,9 +50,6 @@ void SetupHardware(void)
   /* Enable global interrupts so that the USB stack can function */
   sei();
 
-  /* Change the clock frequency prescaler */
-  CLKPR = ((uint16_t)1<<7) | 16;
-
   /* Relocate the interrupt vector table to the bootloader section */
   MCUCR = _BV(IVCE);  // The IVCE bit must be written to logic one to enable change of the IVSEL bit
   MCUCR = _BV(IVSEL); // Move the Interrupt Vectors to the beginning of the Boot Loader section of the Flash
