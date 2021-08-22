@@ -435,7 +435,7 @@ void ProcessExec(void)
     boot_rww_enable();
   }
   if (flipCommand.data[0] == 0x01 && flipCommand.data[1] == 0xFF) { // Erase eeprom 
-    for(uint16_t curAddr=0;curAddr<512;curAddr++) {
+    for(uint16_t curAddr=0;curAddr<1024;curAddr++) {
       eeprom_write_byte((uint8_t*)curAddr, 0xFF);
       eeprom_busy_wait();
     }

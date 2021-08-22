@@ -34,6 +34,12 @@
   #define DF_STATUSREG_BYTE2_SECTORPROGRAMSUSPENDED_BUFF1  (1 << 1)
   #define DF_STATUSREG_BYTE2_SECTORERASESUSPENDED          (1 << 0)
 
+  /* Sector Protection Register Format */
+  #define DF_SECTORPROTECTIONREG_PROTECTED                 (0xFF)
+  #define DF_SECTORPROTECTIONREG_UNPROTECTED               (0x00)
+  #define DF_SECTORPROTECTIONREG_0A_PROTECTED              (0xC0)
+  #define DF_SECTORPROTECTIONREG_0B_PROTECTED              (0x30)
+
   /* Manufacturer and Device ID Information */
   #define DF_MANUFACTURER_ID                      0x1F // Manufacturer ID
   #define DF_DEVICE_ID_BYTE1                      0x27 // Device ID (Byte 1)
@@ -76,7 +82,7 @@
   #define DF_CMD_DISABLESECTORPROTECTION          ((char[]){0x3D, 0x2A, 0x7F, 0x9A})
   #define DF_CMD_ERASESECTORPROTECTIONREG         ((char[]){0x3D, 0x2A, 0x7F, 0xCF})
   #define DF_CMD_PROGRAMSECTORPROTECTIONREG       ((char[]){0x3D, 0x2A, 0x7F, 0xFC})
-  #define DF_CMD_READSECTORPROTECTIONREG          0x32
+  #define DF_CMD_READSECTORPROTECTIONREG          ((char[]){0x32, 0x00, 0x00, 0x00})
   #define DF_CMD_SECTORLOCKDOWN                   ((char[]){0x3D, 0x2A, 0x7F, 0x30})
   #define DF_CMD_READSECTORLOCKDOWNREG            0x35
   #define DF_CMD_FREEZESECTORLOCKDOWN             ((char[]){0x34, 0x55, 0xAA, 0x40})
