@@ -92,7 +92,7 @@ BOOT_START =  0x7000
 FORMAT = ihex
 
 # Target file name (without extension).
-TARGET = rram-usbdfu
+TARGET = atmel-usbdfu
 
 # Object files directory
 #     To put object files in current directory, use a dot (.), do NOT make
